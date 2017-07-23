@@ -1,0 +1,15 @@
+Nume:
+	Cazacu Roxana Andreea
+Grupa:
+	324CC
+
+Mod de implementare:
+
+	Problema 1:
+		Se aleg perechile 2 cate 2, din prima alegandu-se sclavul, iar din a 2-a pereche se alege stapanul. Perechile din care s-au ales stapanii pana la pasul curent sunt puse intr-un maxheap ordonat dupa diferenta stapan - sclav. In cazul in care perechea curenta (din care se alege sclavul) are o diferenta stapan - sclav mai mica decat cea mai mare diferenta din heap, se extrage perechea din varful heap-ului, se alege sclavul din acea pereche iar din perechea curenta se alege stapanul, modificandu-se suma minima pana la momentul curent. Se retine intr-un vector starea fiecarei perechi (daca s-a ales din ea stapanul sau sclavul). La sfarsit in vectorul acesta se adauga suma minima pentru afisarea in main. Complexitatea este O(n * log(n)).
+
+	Problema 2:
+		Am folosit doua functii din scheletul de cod din laboratorul 3 (inmultire de matrice si ridicarea la putere a acesteia). Functia ce ridica la putere un numar am facut-o cu operatii pe biti. Recurenta folosita pentru rezolvarea problemei este: v[i] = 2 * v[i - 1] - v[i - k - 2], unde v[i] este sirul de lungime i(respectiv coloana ce trebuie prelucrata). Impartim vectorul nostru (coloana) in doi vectori: unul pentru prima pozitie, celalalt pentru restul pozitiilor, astfel, daca avem un numar maxim k de 1, atunci inaintea acestei secvente putem pune 0 sau 1, de aici reiesind: 2 * v[i - 1]. Apoi trebuie scazut cazul in care avem 1, apoi secventa de maxim k de 1 si un 0 dupa,aceasta avand v[i - k - 2] (i-lungimea, k-numarul maxim de 1, 2-reprezinta 1-ul din fata secventei k si 0-ul de dupa secventa k, deci scadem doua elemenete). Complexitate este O(k ^ (3 * log(n) * log(m))).
+
+	Bonus: Pe langa Problema 2, am modificat doar void main-ul.Am retinut in doua variabile, cate coloane cu mai putin de k sunt si cate cu mai mult de k sunt. Am calculat numaratorul si numitorul, numitorul fiind obtinut din Teorema mica a lui Fermat. Rezultatul l-am obtinut pe baza combinarilot calculate anterior si a functiei de ridicare la putere a unui numar. Complexitatea este 0(k ^ (3 * log(m1) * log(n) + log(m2) + log(n))) , adica O( k ^ (3 log(m1) * log(n))).
+
